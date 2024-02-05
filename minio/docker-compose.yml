@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  minio:
+    image: ${BASE_URL_REGISTRY}$/{SERVICE}:${VER}
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    networks:
+      - minio_network
+    volumes:
+      - 'minio_data:/data'
+    
+    # get environment automatically from .env or:
+    # environment:
+    #   - MINIO_ROOT_USER=your_username
+    #   - MINIO_ROOT_PASSWORD=your_pasword
+    #   - MINIO_DEFAULT_BUCKETS=your_bucket_name
+
+networks:
+  minio_network:
+    driver: bridge
+
+volumes:
+  minio_data:
+    driver: local
