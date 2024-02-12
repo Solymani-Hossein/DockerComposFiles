@@ -14,7 +14,11 @@ services:
       - apisix
 
   apisix:
-    image: $BASE_URL/$SERVICE_APISIX:${APISIX_VER:-3.8.0-debian}
+    # image: $BASE_URL/$SERVICE_APISIX:${APISIX_VER:-3.8.0-debian}
+    container_name: apisix
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     volumes:
       - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
