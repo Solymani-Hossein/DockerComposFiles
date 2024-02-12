@@ -6,7 +6,10 @@ FROM ${BASE_IMAGE}:${BASE_IMAGE_VERISON}
 
 USER root
 
-RUN apt install -y lua-sql-mysql luarocks
+
+RUN apt install -y default-libmysqlclient-dev luarocks
+
+RUN luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql
 
 USER apisix
 
