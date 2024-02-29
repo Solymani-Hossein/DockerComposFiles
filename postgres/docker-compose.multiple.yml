@@ -6,11 +6,14 @@ services:
     restart: always
     ports:
       - "25432:5432"
+    env_file:
+      - .env
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_MULTIPLE_DATABASES:-auth_svc, order_svc, product_svc}
     volumes:
+      - postgres_multiple_data:/var/lib/postgresql/data/
       - ./scripts/:/docker-entrypoint-initdb.d/
     healthcheck:
       test: ["CMD-SHELL", "pg_isready"]
@@ -18,3 +21,5 @@ services:
       timeout: 5s
       retries: 5
 
+volumes:
+  postgres_multiple_data:
