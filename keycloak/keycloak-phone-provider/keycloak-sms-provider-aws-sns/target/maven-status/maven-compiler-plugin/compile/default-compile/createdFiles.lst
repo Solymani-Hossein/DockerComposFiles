@@ -1,0 +1,2 @@
+cc/coopersoft/keycloak/phone/providers/sender/AwsSnsMessageSenderServiceProviderFactory.class
+cc/coopersoft/keycloak/phone/providers/sender/AwsSnsSmsSenderService.class

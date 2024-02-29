@@ -1,0 +1,2 @@
+/home/unname/workspace/infrastructure/idp/keycloak-phone-provider/keycloak-sms-provider-aws-sns/src/main/java/cc/coopersoft/keycloak/phone/providers/sender/AwsSnsMessageSenderServiceProviderFactory.java
+/home/unname/workspace/infrastructure/idp/keycloak-phone-provider/keycloak-sms-provider-aws-sns/src/main/java/cc/coopersoft/keycloak/phone/providers/sender/AwsSnsSmsSenderService.java

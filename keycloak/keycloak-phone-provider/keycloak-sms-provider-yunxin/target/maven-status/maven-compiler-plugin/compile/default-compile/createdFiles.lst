@@ -1,0 +1,3 @@
+cc/coopersoft/keycloak/phone/providers/sender/YunxinMessageSenderServiceProviderFactory.class
+cc/coopersoft/keycloak/phone/providers/sender/YunxinSmsSenderServiceProvider.class
+cc/coopersoft/keycloak/phone/providers/sender/CheckSumBuilder.class

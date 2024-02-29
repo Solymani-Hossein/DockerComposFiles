@@ -1,0 +1,3 @@
+cc/coopersoft/keycloak/phone/providers/sender/DummySmsSenderService.class
+cc/coopersoft/keycloak/phone/providers/sender/services/RestClient.class
+cc/coopersoft/keycloak/phone/providers/sender/DummyMessageSenderServiceProviderFactory.class
