@@ -1,0 +1,20 @@
+version: "3"
+services:
+  postgresql-multipl:
+    container_name: postgresql-multiple
+    image: postgres:latest
+    restart: always
+    ports:
+      - "25432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_MULTIPLE_DATABASES:-auth_svc, order_svc, product_svc}
+    volumes:
+      - ./scripts/:/docker-entrypoint-initdb.d/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
